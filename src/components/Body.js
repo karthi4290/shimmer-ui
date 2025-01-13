@@ -1,26 +1,25 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [memes, setIsMemes] = useState(null);
+  const [memes, setMemes] = useState(null);
 
+  const fetchMeme = async () => {
+    const response = await fetch("https://meme-api.com/gimme/20");
+    const data = await response.json();
+    setMemes(data.memes);
+  };
   useEffect(() => {
     fetchMeme();
   }, []);
-  const fetchMeme = async () => {
-    const data = await fetch("https://meme-api.com/gimme/20");
-    const json = await data.json();
-    setIsMemes(json.memes);
-  };
 
   return (
     <div className="flex flex-wrap">
       {!memes ? (
         <Shimmer />
       ) : (
-        memes.map((meme, i) => <Card key={i} data={meme} />)
+        memes.map((meme, i) => <Card key={i} memeData={meme} />)
       )}
     </div>
   );
