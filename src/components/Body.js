@@ -10,7 +10,7 @@ const Body = () => {
     fetchMeme();
   }, []);
   const fetchMeme = async () => {
-    const data = await fetch("");
+    const data = await fetch("https://meme-api.com/gimme/20");
     const json = await data.json();
     setIsMemes(json.memes);
   };
