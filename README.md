@@ -5,4 +5,3 @@ Draft
  <CardComponent/> - build card UI with flex wrap 
  <Shimmer/> - shimmer UI 
 
- https://meme-api.com/gimme/20
