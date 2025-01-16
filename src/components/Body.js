@@ -13,13 +13,12 @@ const Body = () => {
   useEffect(() => {
     fetchMeme();
   }, []);
-
   return (
     <div className="flex flex-wrap">
       {!memes ? (
-        <Shimmer />
+        <Shimmer/>
       ) : (
-        memes.map((meme, i) => <Card key={i} memeData={meme} />)
+        memes.map((meme) => <Card key={meme.postLink} memeData={meme} />)
       )}
     </div>
   );
