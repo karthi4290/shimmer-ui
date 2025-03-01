@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import { ProtectedRoute } from "./components/Helper/ProtectedRoute";
 import { useState } from "react";
 import { AccordionParent } from "./components/AccordionData";
+import CommentParent from "./components/comments/CommentParent";
 
 function App() {
   const [lang, setLang] = useState("EN");
@@ -18,6 +19,7 @@ function App() {
           <a href="/About">About</a>
           <a href="/Accordion">Accordion</a>
           <a href="/Login">Login</a>
+          <a href="/NestedComment">Comment</a>
           <select 
           className="text-black outline-none"
           value={lang}
@@ -37,6 +39,7 @@ function App() {
             <Route path="/About" element={<About data={lang} />}></Route>
           </Route>
           <Route path="/Accordion" element={<AccordionParent/>}></Route>
+          <Route path="/NestedComment" element={<CommentParent/>}></Route>
           <Route path="/Login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>

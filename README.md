@@ -31,3 +31,11 @@ https://meme-api.com/gimme/20
        - scenario 1 default it is set to openindex1    when clicked on already open accordion it sets the openIndex to NULL than isOpen will be set  as   false which closes the current accordion
        - scenario 2 when clicked on 2nd  then default openIndex changes to 2nd index  
        - scenario 3 when clicked on 3rd then 2nd openIndex changes to 3
+5) **Nested Comments**
+    - create a parent Comment component and pass the data to child
+    - Icon -> Name
+              Comment
+                replies comment
+                    nest comment
+                       nest comment
+    - Json -> 
